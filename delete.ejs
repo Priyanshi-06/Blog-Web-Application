@@ -1,0 +1,15 @@
+<%- include("./partials/header.ejs") %>
+
+<% if (message) { %>
+    <script>
+        alert("<%= message %>");
+        window.location.href = "/view";
+    </script>
+<% } %>
+
+<form id="delete" class="entry blog-form" action="/delete" method="POST">
+  <label for="blogTitle">Blog Title:</label><br>
+  <input type="text" id="blogTitle" name="blogTitle" placeholder="Enter blog title to delete" required><br>
+  <button type="submit">Delete</button>
+</form>
+

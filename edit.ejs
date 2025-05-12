@@ -1,0 +1,17 @@
+<%- include("./partials/header.ejs") %>
+
+ <% if(message){%>
+    <script>
+        alert("<%= message %>");
+        window.location.href = "/view";
+    </script>
+<%}%>
+  <form class="entry" action="/edit" method="POST" class="entry blog-form">
+    <label for="EditedBlogTitle">Title of Blog to Edit:</label><br>
+    <input type="text" id="EditedBlogTitle" name="EditedBlogTitle" required><br>
+    <label for="EditedBlogDesc">New Description:</label><br>
+    <textarea id="EditedBlogDesc" name="EditedBlogDesc" rows="4" required></textarea><br>
+    <button type="submit">Update Blog</button>
+  </form>
+
+

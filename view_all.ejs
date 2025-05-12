@@ -1,0 +1,32 @@
+<%- include("./partials/header.ejs") %>
+
+<div class="outer">
+<% if (blogs.length === 0) { %>
+  <p>No blogs added yet.</p>
+<% } else { %>
+  <div class="scroll-wrapper">
+    <button class="scroll-btn left" onclick="scrollBlogs(-1)">&#10094;</button>
+
+    <div class="blog_container" id="blogScroll">
+      <% for (var i = 0; i < blogs.length; i++) { %>
+        <div class="blog_post">
+          <h2 class="heading"><%= blogs[i].title %></h2>
+          <p class="desc"><%= blogs[i].description %></p>
+        </div>
+      <% } %>
+    </div>
+
+    <button class="scroll-btn right" onclick="scrollBlogs(1)">&#10095;</button>
+  </div>
+<% } %>
+</div>
+
+<script>
+  function scrollBlogs(direction) {
+    const container = document.getElementById('blogScroll');
+    const scrollAmount = 320; // Approx width of one blog_post including margin
+    container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
+</script>
+
+

@@ -1,0 +1,9 @@
+<%- include("./partials/header.ejs") %>
+  <form class="entry" action="/submit" method="POST" class="blog-form">
+    <label for="blogTitle">Blog Title:</label><br>
+    <input type="text" id="blogTitle" name="blogTitle" placeholder="Enter your blog title" required><br>
+    <label for="blogDesc">Blog Description:</label><br>
+    <textarea id="blogDesc" name="blogDesc" rows="5" placeholder="Write your blog description here..." required></textarea><br>
+    <button type="submit">Submit</button>
+  </form>
+
